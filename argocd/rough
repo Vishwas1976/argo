@@ -1,0 +1,13 @@
+- 1: install argocd cli
+  -- brew tap argoproj/tap
+  -- brew install argoproj/tap/argocd
+
+- 2: install argocd CRD within your cluster
+  -- 2a: create Namespace for ArgoCD: kubectl create namespace argocd
+  -- 2b: use helm to install: helm upgrade --install argocd argo/argo-cd --namespace argocd \
+     --version 1.6.2 --values argo/argo-cd.values.yaml
+  -- 2c: get the password from the secret: kubectl get secret argocd-initial-admin-secret -o yaml and base64 --decode it
+  -- 2d: port forward the svc: kubectl port-forward svc/argocd-server -n argocd 8080:443
+  -- 2d: login into argocd: argocd login --insecure --username admin --password $PASS --grpc-web localhost:8080
+  -- 2e: Change password: argocd account update-password
+  -- 2f: you can login via ui using your new password
