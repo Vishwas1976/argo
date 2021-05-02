@@ -11,3 +11,5 @@
   -- 2d: login into argocd: argocd login --insecure --username admin --password $PASS --grpc-web localhost:8080
   -- 2e: Change password: argocd account update-password
   -- 2f: you can login via ui using your new password
+
+- 3: setting up your project 
