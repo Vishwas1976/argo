@@ -5,7 +5,7 @@ metadata:
   labels:
     app: stage-app-1
 spec:
-  replicas: 4
+  replicas: 0
   selector:
     matchLabels:
       app: stage-app-1
