@@ -12,4 +12,5 @@
   -- 2e: Change password: argocd account update-password
   -- 2f: you can login via ui using your new password
 
-- 3: setting up your project 
+- 3: setting up your project { defines the repos which can be used and ties that with the cluster and the resources }
+  -- 3a: create the project and the application: kubectl apply -f argocd/theProj/mainProdProject.yaml

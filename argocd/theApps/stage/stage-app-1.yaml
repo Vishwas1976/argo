@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: stage-app-1-deployment
+  labels:
+    app: stage-app-1
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: stage-app-1
+  template:
+    metadata:
+      labels:
+        app: stage-app-1
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:1.14.2
+          ports:
+            - containerPort: 80
